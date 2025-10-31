@@ -4,7 +4,7 @@
 
 
 static void activate (GtkApplication *app,gpointer user_data) {
-
+    GtkWidget w
 }
 
 int main(int argc, char **argv) {
