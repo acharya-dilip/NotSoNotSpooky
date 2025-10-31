@@ -12,10 +12,21 @@ static void activate (GtkApplication *app,gpointer user_data) {
     *labelRedCandy,
     *labelPurpleCandy,
     *buttonCandy,
+    *imgCandy,
     *buttonGhost;
 
+    //COnnects the styles.css stylesheet
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "styles.css");
+
+    gtk_style_context_add_provider_for_display(
+        gdk_display_get_default(),
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER
+    );
+
     //Init of windowSpooky
-    windowSpooky = gtk_window_new();
+    windowSpooky = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(windowSpooky),"SpookyClicky");
     gtk_window_set_default_size(GTK_WINDOW(windowSpooky),600,600);
     gtk_window_present(GTK_WINDOW(windowSpooky));
@@ -26,7 +37,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
     //init of buttonCandy
     buttonCandy = gtk_button_new_with_label("BUTTONCANDYY!!");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonCandy,0,0,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonCandy,0,0,150,150);
+    //Margins & Paddings
+    gtk_widget_set_size_request(buttonCandy,150,150);
+
 
 
 
