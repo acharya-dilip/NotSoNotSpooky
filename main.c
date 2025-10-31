@@ -6,6 +6,7 @@
 static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget
     *windowSpooky,
+    *gridParent,
     *frameCandies,
     *labelBlueCandy,
     *labelRedCandy,
@@ -18,6 +19,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_window_set_title(GTK_WINDOW(windowSpooky),"SpookyClicky");
     gtk_window_set_default_size(GTK_WINDOW(windowSpooky),600,600);
     gtk_window_present(GTK_WINDOW(windowSpooky));
+
+    //init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowSpooky),gridParent);
 
 
 
