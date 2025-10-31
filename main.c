@@ -24,6 +24,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowSpooky),gridParent);
 
+    //init of buttonCandy
+    buttonCandy = gtk_button_new_with_label("BUTTONCANDYY!!");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonCandy,0,0,5,5);
+
 
 
 
