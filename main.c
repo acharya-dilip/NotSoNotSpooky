@@ -4,7 +4,19 @@
 
 
 static void activate (GtkApplication *app,gpointer user_data) {
-    GtkWidget w
+    GtkWidget
+    *windowSpooky,
+    *frameCandies,
+    *labelBlueCandy,
+    *labelRedCandy,
+    *labelPurpleCandy,
+    *buttonCandy,
+    *buttonGhost;
+
+
+
+
+
 }
 
 int main(int argc, char **argv) {
