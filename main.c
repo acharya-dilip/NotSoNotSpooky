@@ -13,6 +13,12 @@ static void activate (GtkApplication *app,gpointer user_data) {
     *buttonCandy,
     *buttonGhost;
 
+    //Init of windowSpooky
+    windowSpooky = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(windowSpooky),"SpookyClicky");
+    gtk_window_set_default_size(GTK_WINDOW(windowSpooky),600,600);
+    gtk_window_present(GTK_WINDOW(windowSpooky));
+
 
 
 
