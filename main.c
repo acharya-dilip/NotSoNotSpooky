@@ -186,19 +186,36 @@ void performCalculation() {
     // 2 = product
     // 3 = subtract
     // 4 = sum
+    int result;//This vaaariable is used to store 0 or 1 from the below switch
+    //0 indicates successful
+    //1 indicates failure
     switch(val.operandType) {
         case 1:
-            result = a/b;
+            val.result = val.a/val.b;
+            result = 0;
             break;
         case 2:
+            val.result = val.a*val.b;
+            result = 0;
             break;
         case 3:
+            val.result = val.a-val.b;
+            result = 0;
             break;
         case 4:
+            val.result = val.a+val.b;
+            result = 0;
             break;
         default:
-            gtk_editable_set_text(GTK_EDITABLE(entryCal),"ERROR!");
-
+            result = 1;
+    }
+    if (result==0) {
+        char temp[50];
+        snprintf(temp,sizeof(temp),"%3.f",val.result);
+        gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
+    }
+    else {
+        gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
     }
 }
 
