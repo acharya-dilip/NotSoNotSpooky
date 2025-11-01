@@ -99,6 +99,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonDiv= gtk_button_new_with_label("/");
     gtk_grid_attach(GTK_GRID(gridParent),buttonDiv,3,0,1,1);
 
+    //init of buttonProd
+    GtkWidget *buttonProd= gtk_button_new_with_label("×");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonProd,3,1,1,1);
+
 
 
 }
