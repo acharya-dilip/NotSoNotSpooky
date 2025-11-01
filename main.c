@@ -3,7 +3,7 @@
 #include <curl/curl.h>
 
 struct values {
-    long a,b,result;
+    long long a,b,result;
     char operand[5];
 }val;
 
@@ -150,11 +150,14 @@ void buttonPress(GtkButton *button,gpointer user_data) {
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
         char temp[50];
-        snprintf(temp,sizeof(temp),"%d",val.a);
+        snprintf(temp,sizeof(temp),"%lld",val.a);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
     else {
         val.b = val.b*10+n;
+        char temp[50];
+        snprintf(temp,sizeof(temp),"%lld%s%lld",val.a,val.operand,val.b);
+        gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
 }
 
