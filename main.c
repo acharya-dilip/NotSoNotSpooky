@@ -7,6 +7,9 @@ struct values {
     char operand[5];
 }val;
 
+void buttonPress(int n);
+
+
 static void activate (GtkApplication *app,gpointer user_data) {
 
 
@@ -119,6 +122,16 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),buttonResult,3,5,1,1);
 
 }
+
+void buttonPress(int n) {
+    if (strcmp(val.operand,"")==0){
+        val.a = val.a*10+n;
+    }
+    else {
+        val.b = val.b*10+n;
+    }
+}
+
 
 int main(int argc, char **argv) {
     GtkApplication *app;
