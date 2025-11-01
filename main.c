@@ -3,11 +3,12 @@
 #include <curl/curl.h>
 
 struct values {
-    int a,b,result;
+    long a,b,result;
     char operand[5];
 }val;
 
-void buttonPress(gpointer user_data);
+
+void buttonPress(GtkButton *button,gpointer user_data);
 //Globalised Variables
 GtkWidget *entryCal;
 static void activate (GtkApplication *app,gpointer user_data) {
@@ -125,7 +126,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 }
 
-void buttonPress(gpointer user_data) {
+void buttonPress(GtkButton *button,gpointer user_data) {
     int n = GPOINTER_TO_INT(user_data);
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
