@@ -157,11 +157,15 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 void numButPress(GtkButton *button,gpointer user_data) {
     int n = GPOINTER_TO_INT(user_data);
-    if (sixSevenCondition == 1) {
+    if (n==7){
+        if (sixSevenCondition == 1) {
         sixSeven();
+        }
     }
     if (n==6) {
         sixSevenCondition = 1;
+    }else {
+        sixSevenCondition = 0;
     }
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
@@ -251,7 +255,7 @@ void clearEntry() {
 }
 
 void sixSeven(){
-
+    printf("SiXsEvEn");
 }
 
 int main(int argc, char **argv) {
