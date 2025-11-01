@@ -91,8 +91,8 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),numbut0,1,5,1,1);
 
     //init of buttonPercent
-    GtkWidget *buttonPercent= gtk_button_new_with_label("%");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonPercent,2,5,1,1);
+    GtkWidget *buttonAns= gtk_button_new_with_label("Ans");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonAns,2,5,1,1);
 
     //For the operand buttons
     //init of buttonDiv
