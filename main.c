@@ -231,6 +231,12 @@ void performCalculation() {
     else {
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
     }
+    //resetting the struct values
+    val.a = 0;
+    val.b = 0;
+    val.result = 0;
+    val.operandType = 0;
+    strcpy(val.operand,"");
 }
 
 
