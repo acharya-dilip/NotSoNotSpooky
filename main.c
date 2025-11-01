@@ -38,6 +38,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonClear = gtk_button_new_with_label("C");
     gtk_grid_attach(GTK_GRID(gridParent),buttonClear,0,1,1,1);
 
+    //init of buttonSquare
+    GtkWidget *buttonSquare = gtk_button_new_with_label("x²");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonSquare,1,1,1,1);
+
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
