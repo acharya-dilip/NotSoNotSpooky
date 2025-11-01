@@ -7,9 +7,9 @@ struct values {
     char operand[5];
 }val;
 
-void buttonPress(int n);
-
-
+void buttonPress(gpointer user_data);
+//Globalised Variables
+GtkWidget *entryCal;
 static void activate (GtkApplication *app,gpointer user_data) {
 
 
@@ -34,7 +34,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_window_set_child(GTK_WINDOW(windowSpooky),gridParent);
 
     //init of entryCal
-    GtkWidget *entryCal = gtk_entry_new();
+    entryCal = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryCal,0,0,4,1);
     gtk_editable_set_editable(GTK_EDITABLE(entryCal),FALSE);
 
@@ -53,6 +53,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
+    g_signal_connect(numbut7,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(7));
 
     //init of numbut8
     GtkWidget *numbut8 = gtk_button_new_with_label("8");
@@ -124,9 +125,13 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 }
 
-void buttonPress(int n) {
+void buttonPress(gpointer user_data) {
+    int n = GPOINTER_TO_INT(user_data);
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
+        char temp[50];
+        snprintf(temp,sizeof(temp),"%d",val.a);
+        gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
     else {
         val.b = val.b*10+n;
