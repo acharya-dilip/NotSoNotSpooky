@@ -8,9 +8,7 @@ struct values {
 }val;
 
 static void activate (GtkApplication *app,gpointer user_data) {
-    GtkWidget
-    *windowSpooky,
-    *gridParent;
+
 
     //COnnects the styles.css stylesheet
     GtkCssProvider *provider = gtk_css_provider_new();
@@ -23,15 +21,18 @@ static void activate (GtkApplication *app,gpointer user_data) {
     );
 
     //Init of windowSpooky
-    windowSpooky = gtk_application_window_new(app);
+    GtkWidget *windowSpooky = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(windowSpooky),"Calculator");
     gtk_window_set_default_size(GTK_WINDOW(windowSpooky),600,600);
     gtk_window_present(GTK_WINDOW(windowSpooky));
 
     //init of gridParent
-    gridParent = gtk_grid_new();
+    GtkWidget *gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowSpooky),gridParent);
 
+    //init of numbut7
+    GtkWidget *numbut7 = gtk_button_new_with_label("7");
+    gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,1,1,1);
 
 
 
