@@ -107,7 +107,9 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonSub= gtk_button_new_with_label("-");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSub,3,2,1,1);
 
-
+    //init of buttonSum
+    GtkWidget *buttonSum= gtk_button_new_with_label("+");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonSum,3,3,1,1);
 
 }
 
