@@ -9,6 +9,7 @@ struct values {
 
 
 void buttonPress(GtkButton *button,gpointer user_data);
+void clearEntry();
 //Globalised Variables
 GtkWidget *entryCal;
 static void activate (GtkApplication *app,gpointer user_data) {
@@ -42,6 +43,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of buttonClear
     GtkWidget *buttonClear = gtk_button_new_with_label("C");
     gtk_grid_attach(GTK_GRID(gridParent),buttonClear,0,1,1,1);
+    g_signal_connect(buttonClear,"clicked",G_CALLBACK(clearEntry),NULL);
 
     //init of buttonSquare
     GtkWidget *buttonSquare = gtk_button_new_with_label("x²");
@@ -161,6 +163,14 @@ void buttonPress(GtkButton *button,gpointer user_data) {
     }
 }
 
+
+
+
+
+
+void clearEntry() {
+    gtk_editable_set_text(GTK_EDITABLE(entryCal),"");
+}
 
 int main(int argc, char **argv) {
     GtkApplication *app;
