@@ -13,6 +13,7 @@ struct values {
 void numButPress(GtkButton *button,gpointer user_data);
 void operandPress(GtkButton *button,gpointer operand);
 void performCalculation();
+void square();
 
 void clearEntry();
 //Globalised Variables
@@ -47,16 +48,8 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
     //init of buttonClear
     GtkWidget *buttonClear = gtk_button_new_with_label("C");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonClear,0,1,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonClear,0,1,3,1);
     g_signal_connect(buttonClear,"clicked",G_CALLBACK(clearEntry),NULL);
-
-    //init of buttonSquare
-    GtkWidget *buttonSquare = gtk_button_new_with_label("x²");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonSquare,1,1,1,1);
-
-    //init of buttonSqrt
-    GtkWidget *buttonSqrt = gtk_button_new_with_label("√x");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonSqrt,2,1,1,1);
 
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
@@ -231,7 +224,7 @@ void performCalculation() {
     else {
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
     }
-    //resetting the struct values
+
     val.a = 0;
     val.b = 0;
     val.result = 0;
