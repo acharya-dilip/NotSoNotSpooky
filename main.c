@@ -14,6 +14,8 @@ void numButPress(GtkButton *button,gpointer user_data);
 void operandPress(GtkButton *button,gpointer operand);
 void performCalculation();
 void square();
+//Jumpscares and quirks
+void sixSeven(); int sixSevenCondition;
 
 void clearEntry();
 //Globalised Variables
@@ -155,6 +157,12 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 void numButPress(GtkButton *button,gpointer user_data) {
     int n = GPOINTER_TO_INT(user_data);
+    if (sixSevenCondition == 1) {
+        sixSeven();
+    }
+    if (n==6) {
+        sixSevenCondition = 1;
+    }
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
         char temp[50];
@@ -167,6 +175,8 @@ void numButPress(GtkButton *button,gpointer user_data) {
         snprintf(temp,sizeof(temp),"%s%lld",val.operand,val.b);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
+
+
 }
 
 void operandPress(GtkButton *button,gpointer operand) {
@@ -232,14 +242,16 @@ void performCalculation() {
     strcpy(val.operand,"");
 }
 
-
-
 void clearEntry() {
     gtk_editable_set_text(GTK_EDITABLE(entryCal),"");
     val.a = 0;
     val.b = 0;
     val.result = 0;
     strcpy(val.operand,"");
+}
+
+void sixSeven(){
+
 }
 
 int main(int argc, char **argv) {
