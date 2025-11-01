@@ -3,7 +3,8 @@
 #include <curl/curl.h>
 
 struct values {
-    long long a,b,result;
+    long long a,b;
+    double result;
     int operandType;
     char operand[5];
 }val;
@@ -180,8 +181,14 @@ void operandPress(GtkButton *button,gpointer operand) {
 }
 
 void performCalculation() {
+    // operandType meaning
+    // 1 = div
+    // 2 = product
+    // 3 = subtract
+    // 4 = sum
     switch(val.operandType) {
         case 1:
+            result = a/b;
             break;
         case 2:
             break;
