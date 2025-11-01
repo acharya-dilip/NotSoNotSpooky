@@ -8,7 +8,9 @@ struct values {
 }val;
 
 
-void buttonPress(GtkButton *button,gpointer user_data);
+void numButPress(GtkButton *button,gpointer user_data);
+void operandPress(GtkButton *button,gpointer operand);
+
 void clearEntry();
 //Globalised Variables
 GtkWidget *entryCal;
@@ -56,54 +58,54 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
-    g_signal_connect(numbut7,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(7));
+    g_signal_connect(numbut7,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(7));
 
     //init of numbut8
     GtkWidget *numbut8 = gtk_button_new_with_label("8");
     gtk_grid_attach(GTK_GRID(gridParent),numbut8,1,2,1,1);
-    g_signal_connect(numbut8,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(8));
+    g_signal_connect(numbut8,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(8));
 
 
     //init of numbut9
     GtkWidget *numbut9 = gtk_button_new_with_label("9");
     gtk_grid_attach(GTK_GRID(gridParent),numbut9,2,2,1,1);
-    g_signal_connect(numbut9,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(9));
+    g_signal_connect(numbut9,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(9));
 
 
     //init of numbut4
     GtkWidget *numbut4 = gtk_button_new_with_label("4");
     gtk_grid_attach(GTK_GRID(gridParent),numbut4,0,3,1,1);
-    g_signal_connect(numbut4,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(4));
+    g_signal_connect(numbut4,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(4));
 
 
     //init of numbut5
     GtkWidget *numbut5 = gtk_button_new_with_label("5");
     gtk_grid_attach(GTK_GRID(gridParent),numbut5,1,3,1,1);
-    g_signal_connect(numbut5,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(5));
+    g_signal_connect(numbut5,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(5));
 
 
     //init of numbut6
     GtkWidget *numbut6 = gtk_button_new_with_label("6");
     gtk_grid_attach(GTK_GRID(gridParent),numbut6,2,3,1,1);
-    g_signal_connect(numbut6,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(6));
+    g_signal_connect(numbut6,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(6));
 
 
     //init of numbut1
     GtkWidget *numbut1 = gtk_button_new_with_label("1");
     gtk_grid_attach(GTK_GRID(gridParent),numbut1,0,4,1,1);
-    g_signal_connect(numbut1,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(1));
+    g_signal_connect(numbut1,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(1));
 
 
     //init of numbut2
     GtkWidget *numbut2 = gtk_button_new_with_label("2");
     gtk_grid_attach(GTK_GRID(gridParent),numbut2,1,4,1,1);
-    g_signal_connect(numbut2,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(2));
+    g_signal_connect(numbut2,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(2));
 
 
     //init of numbut3
     GtkWidget *numbut3 = gtk_button_new_with_label("3");
     gtk_grid_attach(GTK_GRID(gridParent),numbut3,2,4,1,1);
-    g_signal_connect(numbut3,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(3));
+    g_signal_connect(numbut3,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(3));
 
 
     //init of buttonPoint
@@ -114,7 +116,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of numbut0
     GtkWidget *numbut0 = gtk_button_new_with_label("0");
     gtk_grid_attach(GTK_GRID(gridParent),numbut0,1,5,1,1);
-    g_signal_connect(numbut0,"clicked",G_CALLBACK(buttonPress),GINT_TO_POINTER(0));
+    g_signal_connect(numbut0,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(0));
 
 
     //init of buttonPercent
@@ -147,7 +149,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 }
 
-void buttonPress(GtkButton *button,gpointer user_data) {
+void numButPress(GtkButton *button,gpointer user_data) {
     int n = GPOINTER_TO_INT(user_data);
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
@@ -163,6 +165,10 @@ void buttonPress(GtkButton *button,gpointer user_data) {
     }
 }
 
+void operandPress(GtkButton *button,gpointer operand) {
+    strcpy(val.operand,operand);
+    gtk_editable_set_text(GTK_EDITABLE(entryCal),operand);
+}
 
 
 
