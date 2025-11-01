@@ -256,6 +256,7 @@ void clearEntry() {
 
 void sixSeven(){
     printf("SiXsEvEn");
+    system("gst-launch-1.0 playbin uri=\"https://hc-cdn.hel1.your-objectstorage.com/s/v3/b0115ef0df6139a69e9e67c4dc8a0fcc50e57e07_67._sound_effect._audio.mp4\" >/dev/null 2>&1 &");
 }
 
 int main(int argc, char **argv) {
