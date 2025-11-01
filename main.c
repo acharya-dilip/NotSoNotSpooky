@@ -42,6 +42,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonSquare = gtk_button_new_with_label("x²");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSquare,1,1,1,1);
 
+    //init of buttonSqrt
+    GtkWidget *buttonSqrt = gtk_button_new_with_label("√x");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonSqrt,2,1,1,1);
+
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
@@ -89,6 +93,12 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of buttonPercent
     GtkWidget *buttonPercent= gtk_button_new_with_label("%");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPercent,2,5,1,1);
+
+    //For the operand buttons
+    //init of buttonDiv
+    GtkWidget *buttonDiv= gtk_button_new_with_label("/");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonDiv,3,0,1,1);
+
 
 
 }
