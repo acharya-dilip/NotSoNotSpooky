@@ -70,9 +70,17 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut3 = gtk_button_new_with_label("3");
     gtk_grid_attach(GTK_GRID(gridParent),numbut3,2,4,1,1);
 
+    //init of buttonPoint
+    GtkWidget *buttonPoint = gtk_button_new_with_label(".");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPoint,0,5,1,1);
+
     //init of numbut0
     GtkWidget *numbut0 = gtk_button_new_with_label("0");
     gtk_grid_attach(GTK_GRID(gridParent),numbut0,1,5,1,1);
+
+    //init of buttonPercent
+    GtkWidget *buttonPercent= gtk_button_new_with_label(".");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPercent,2,5,1,1);
 
 
 }
