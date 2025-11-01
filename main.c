@@ -170,6 +170,10 @@ void buttonPress(GtkButton *button,gpointer user_data) {
 
 void clearEntry() {
     gtk_editable_set_text(GTK_EDITABLE(entryCal),"");
+    val.a = 0;
+    val.b = 0;
+    val.result = 0;
+    strcpy(val.operand,"");
 }
 
 int main(int argc, char **argv) {
