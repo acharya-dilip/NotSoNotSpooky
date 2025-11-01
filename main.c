@@ -156,7 +156,7 @@ void buttonPress(GtkButton *button,gpointer user_data) {
     else {
         val.b = val.b*10+n;
         char temp[50];
-        snprintf(temp,sizeof(temp),"%lld%s%lld",val.a,val.operand,val.b);
+        snprintf(temp,sizeof(temp),"%s%lld",val.operand,val.b);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
 }
