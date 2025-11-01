@@ -2,6 +2,10 @@
 #include <gtk/gtk.h>
 #include <curl/curl.h>
 
+struct values {
+    int a,b,result;
+    char operand[5];
+}val;
 
 static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget
