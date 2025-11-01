@@ -4,12 +4,14 @@
 
 struct values {
     long long a,b,result;
+    int operandType;
     char operand[5];
 }val;
 
 
 void numButPress(GtkButton *button,gpointer user_data);
 void operandPress(GtkButton *button,gpointer operand);
+void performCalculation();
 
 void clearEntry();
 //Globalised Variables
@@ -177,7 +179,21 @@ void operandPress(GtkButton *button,gpointer operand) {
     gtk_editable_set_text(GTK_EDITABLE(entryCal),operand);
 }
 
+void performCalculation() {
+    switch(val.operandType) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            gtk_editable_set_text(GTK_EDITABLE(entryCal),"ERROR!");
 
+    }
+}
 
 
 
