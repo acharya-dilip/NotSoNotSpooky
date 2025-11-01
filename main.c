@@ -95,6 +95,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),buttonAns,2,5,1,1);
 
     //For the operand buttons
+
     //init of buttonDiv
     GtkWidget *buttonDiv= gtk_button_new_with_label("/");
     gtk_grid_attach(GTK_GRID(gridParent),buttonDiv,3,1,1,1);
@@ -110,6 +111,12 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of buttonSum
     GtkWidget *buttonSum= gtk_button_new_with_label("+");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSum,3,4,1,1);
+
+    //For the result button
+
+    //init of buttonResult
+    GtkWidget *buttonResult = gtk_button_new_with_label("=");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonResult,3,5,1,1);
 
 }
 
