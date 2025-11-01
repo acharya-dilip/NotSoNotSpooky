@@ -178,6 +178,19 @@ void numButPress(GtkButton *button,gpointer user_data) {
 void operandPress(GtkButton *button,gpointer operand) {
     strcpy(val.operand,operand);
     gtk_editable_set_text(GTK_EDITABLE(entryCal),operand);
+    //sets the operandType variable
+    if (strcmp(operand,"/")==0) {
+        val.operandType = 1;
+    }
+    if (strcmp(operand,"×")==0) {
+        val.operandType = 2;
+    }
+    if (strcmp(operand,"-")==0) {
+        val.operandType = 3;
+    }
+    if (strcmp(operand,"+")==0) {
+        val.operandType = 4;
+    }
 }
 
 void performCalculation() {
