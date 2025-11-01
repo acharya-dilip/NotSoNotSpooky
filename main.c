@@ -128,18 +128,25 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of buttonDiv
     GtkWidget *buttonDiv= gtk_button_new_with_label("/");
     gtk_grid_attach(GTK_GRID(gridParent),buttonDiv,3,1,1,1);
+    g_signal_connect(buttonDiv,"clicked",G_CALLBACK(operandPress),"/");
+
 
     //init of buttonProd
     GtkWidget *buttonProd= gtk_button_new_with_label("×");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProd,3,2,1,1);
+    g_signal_connect(buttonProd,"clicked",G_CALLBACK(operandPress),"×");
 
     //init of buttonSub
     GtkWidget *buttonSub= gtk_button_new_with_label("-");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSub,3,3,1,1);
+    g_signal_connect(buttonSub,"clicked",G_CALLBACK(operandPress),"-");
+
 
     //init of buttonSum
     GtkWidget *buttonSum= gtk_button_new_with_label("+");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSum,3,4,1,1);
+    g_signal_connect(buttonSum,"clicked",G_CALLBACK(operandPress),"+");
+
 
     //For the result button
 
