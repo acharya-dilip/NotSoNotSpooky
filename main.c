@@ -156,6 +156,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of buttonResult
     GtkWidget *buttonResult = gtk_button_new_with_label("=");
     gtk_grid_attach(GTK_GRID(gridParent),buttonResult,3,5,1,1);
+    g_signal_connect(buttonResult,"clicked",G_CALLBACK(performCalculation),NULL);
 
 }
 
