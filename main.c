@@ -36,6 +36,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of entryCal
     GtkWidget *entryCal = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryCal,0,0,4,1);
+    gtk_editable_set_editable(GTK_EDITABLE(entryCal),FALSE);
 
     //init of buttonClear
     GtkWidget *buttonClear = gtk_button_new_with_label("C");
