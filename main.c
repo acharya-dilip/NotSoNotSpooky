@@ -34,6 +34,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *entryCal = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryCal,0,0,4,1);
 
+    //init of buttonClear
+    GtkWidget *buttonClear = gtk_button_new_with_label("C");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonClear,0,1,1,1);
+
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
@@ -79,7 +83,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),numbut0,1,5,1,1);
 
     //init of buttonPercent
-    GtkWidget *buttonPercent= gtk_button_new_with_label(".");
+    GtkWidget *buttonPercent= gtk_button_new_with_label("%");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPercent,2,5,1,1);
 
 
