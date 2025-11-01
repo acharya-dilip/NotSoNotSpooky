@@ -42,6 +42,10 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut9 = gtk_button_new_with_label("9");
     gtk_grid_attach(GTK_GRID(gridParent),numbut9,2,1,1,1);
 
+    //init of numbut6
+    GtkWidget *numbut6 = gtk_button_new_with_label("6");
+    gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
+
 
 
 
