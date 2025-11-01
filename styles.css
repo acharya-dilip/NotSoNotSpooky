@@ -1,3 +1,10 @@
 button {
-    padding: 0;
+    font-size: 20px;
+    min-width: 40px;
+    min-height: 30px;
+}
+entry {
+    font-size: 20px;
+    min-width:160px;
+    min-height: 50px;
 }
