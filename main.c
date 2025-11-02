@@ -36,6 +36,9 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of gridParent
     GtkWidget *gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowSpooky),gridParent);
+    //MArgins & Paddings
+    gtk_widget_set_halign(GTK_WIDGET(gridParent),GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(GTK_WIDGET(gridParent),GTK_ALIGN_CENTER);
 
     //init of entryCal
     entryCal = gtk_entry_new();
