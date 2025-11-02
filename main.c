@@ -18,10 +18,10 @@ void pressAns();
 //Jumpscares and quirks
 void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
+void checkSixtyNine(int x);
+void sixtyNine(); int sixtyNineCondition;
 void performSpooky(); int spookyThreshold,spookyStatus;
 void randomSpook();
-void checkSixtyNine();
-void sixtyNine();
 void godsEnlightenment();
 
 void clearEntry();
@@ -215,7 +215,25 @@ void checkSixSeven(int x) {
         sixSevenCondition = 0;
     }
 }
+void sixSeven(){
+    system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
+}
+void checkSixtyNine(int x) {
+    if (x==9){
+        if (sixtyNineCondition == 1) {
+            sixtyNine();
+            spookyThreshold -= 15;
+        }
+    }
+    if (x==6) {
+        sixtyNineCondition = 1;
+    }else {
+        sixtyNineCondition = 0;
+    }
+}
+void sixtyNine() {
 
+}
 void operandPress(GtkButton *button,gpointer operand) {
     strcpy(val.operand,operand);
     gtk_editable_set_text(GTK_EDITABLE(entryCal),operand);
@@ -345,9 +363,6 @@ void performSpooky() {
     }
 }
 
-void sixSeven(){
-    system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
-}
 
 void randomSpook() {
     int random = (rand()%10)+1;
