@@ -17,22 +17,13 @@ void square();
 //Jumpscares and quirks
 void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
+void performSpooky(); int spookyThreshold;
 
 void clearEntry();
 //Globalised Variables
 GtkWidget *entryCal;
 static void activate (GtkApplication *app,gpointer user_data) {
 
-
-    //COnnects the styles.css stylesheet
-    GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "styles.css");
-
-    gtk_style_context_add_provider_for_display(
-        gdk_display_get_default(),
-        GTK_STYLE_PROVIDER(provider),
-        GTK_STYLE_PROVIDER_PRIORITY_USER
-    );
 
     //Init of windowSpooky
     GtkWidget *windowSpooky = gtk_application_window_new(app);
@@ -157,6 +148,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
 }
 
 void numButPress(GtkButton *button,gpointer user_data) {
+    spookyThreshold += 5;
     int n = GPOINTER_TO_INT(user_data);
     checkSixSeven(n);
     if (strcmp(val.operand,"")==0){
@@ -176,6 +168,7 @@ void checkSixSeven(int x) {
     if (x==7){
         if (sixSevenCondition == 1) {
             sixSeven();
+            spookyThreshold += 20;
         }
     }
     if (x==6) {
@@ -233,7 +226,7 @@ void performCalculation() {
     }
     if (result==0) {
         char temp[50];
-        snprintf(temp,sizeof(temp),"%3.f",val.result);
+        snprintf(temp,sizeof(temp),"%3.lf",val.result);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
     else {
@@ -254,6 +247,18 @@ void clearEntry() {
     val.b = 0;
     val.result = 0;
     strcpy(val.operand,"");
+}
+
+void performSpooky() {
+    //COnnects the styles.css stylesheet
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "styles.css");
+
+    gtk_style_context_add_provider_for_display(
+        gdk_display_get_default(),
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER
+    );;
 }
 
 void sixSeven(){
