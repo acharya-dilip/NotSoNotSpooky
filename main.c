@@ -201,12 +201,12 @@ void numButPress(GtkButton *button,gpointer user_data) {
         snprintf(temp,sizeof(temp),"%s%lld",val.operand,val.b);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
-    if (spookyStatus!=0) {
+    if (spookyStatus==0) {
         if (spookyThreshold>=100) {
             performSpooky();
             spookyStatus = 1;
         }
-    }else {
+    }else{
         system("gst-play-1.0 ./sounds/soundWoosh.mp3 >/dev/null 2>&1 &");
     }
 }
