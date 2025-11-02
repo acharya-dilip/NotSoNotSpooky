@@ -14,6 +14,74 @@ button {
     background-repeat:no-repeat;
 
 }
+.spookyButton2{
+    color: transparent;
+    background-image: url("src/2.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.spookyButton3{
+    color: transparent;
+    background-image: url("src/3.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.spookyButton4{
+    color: transparent;
+    background-image: url("src/4.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.spookyButton5{
+    color: transparent;
+    background-image: url("src/5.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.spookyButton6{
+    color: transparent;
+    background-image: url("src/6.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.spookyButton7{
+    color: transparent;
+    background-image: url("src/7.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+.spookyButton8{
+    color: transparent;
+    background-image: url("src/8.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+.spookyButton9{
+    color: transparent;
+    background-image: url("src/9.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+.spookyButton0{
+    color: transparent;
+    background-image: url("src/10.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
 
 entry {
     font-size: 20px;
