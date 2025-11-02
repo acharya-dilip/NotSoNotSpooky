@@ -39,6 +39,8 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //MArgins & Paddings
     gtk_widget_set_halign(GTK_WIDGET(gridParent),GTK_ALIGN_CENTER);
     gtk_widget_set_valign(GTK_WIDGET(gridParent),GTK_ALIGN_CENTER);
+    gtk_widget_set_margin_start(GTK_WIDGET(gridParent),10);
+    gtk_widget_set_margin_end(GTK_WIDGET(gridParent),10);
 
     //init of entryCal
     entryCal = gtk_entry_new();
