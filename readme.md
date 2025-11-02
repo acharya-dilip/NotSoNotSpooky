@@ -23,7 +23,7 @@ With thy OG number 69420 and the recent fledgling 67.
 Conjure the Olden gods or Create your own<br>
 Either way enlighten yourself and free yourself of the spook.
 
-# Build Instructions
+# Arch Linux Build Instructions
 
 |Commands                                                      |What Does it do?              | 
 |--------------------------------------------------------------|------------------------------|

@@ -30,7 +30,6 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //Init of windowSpooky
     GtkWidget *windowSpooky = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(windowSpooky),"Calculator");
-    //gtk_window_set_default_size(GTK_WINDOW(windowSpooky),600,600);
     gtk_window_present(GTK_WINDOW(windowSpooky));
 
     //init of gridParent
@@ -162,32 +161,41 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_widget_add_css_class(buttonResult,"spookyButtonRes");
 
 }
-
+//Function that handles the button press for number buttons
 void numButPress(GtkButton *button,gpointer user_data) {
+    //Increases the spookyThreshold for every number button press
     spookyThreshold += 5;
+    //Converts the passed pointer into an integer for usage
     int n = GPOINTER_TO_INT(user_data);
+    //checks if 6 and 7 are consectively placed and triggers sixSeven spook if they are
     checkSixSeven(n);
+    //Decides weather to set the value as a or based on if operand is present
     if (strcmp(val.operand,"")==0){
+        //sets the value of digits typed as value of a if operand is absent
         val.a = val.a*10+n;
         char temp[50];
         snprintf(temp,sizeof(temp),"%lld",val.a);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
     else {
+        //Sets the value of digits typed if operand is absent
         val.b = val.b*10+n;
         char temp[50];
         snprintf(temp,sizeof(temp),"%s%lld",val.operand,val.b);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
+    //Checks if the program is already in spooky mode
     if (spookyStatus==0) {
+        //if not checks if spookyThreshold is reached 100
         if (spookyThreshold>=100) {
+            //if spooky threshold reached 100 executes function performSpooky
             performSpooky();
         }
     }
     else{
         system("gst-play-1.0 ./sounds/soundWoosh.mp3 >/dev/null 2>&1 &");
     }
-    if (spookyThreshold>=50) {
+    if (spookyThreshold>=40) {
         randomSpook();
     }
 }
@@ -237,7 +245,7 @@ void pressAns() {
         snprintf(temp,sizeof(temp),"%sAns",val.operand);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
-    if (spookyThreshold>=50) {
+    if (spookyThreshold>=40) {
         randomSpook();
     }
 }
@@ -271,37 +279,47 @@ void performCalculation() {
         default:
             result = 1;
     }
+
     if (result==0) {
+        //If Result is obtained properly than displays it
         char temp[50];
         snprintf(temp,sizeof(temp),"%3.lf",val.result);
         val.answer = val.result;
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
     else {
+        //if result isn't obtained properly displays error
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
+        //PLays the womanScreaming sound effect
         system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
     }
+    //This if statement check if the god value has be conjoured
     if (val.a==6940 && val.operandType==4 && val.b==67 || val.result == 69487 || val.result==69420) {
         godsEnlightenment();
     }
+    //Stores the recent answer in variable
     val.answer = val.result;
+    //Sets the recent answer as the value for the for value unless overridden
     val.a = val.result;
+    //Resets the other values after calculation
     val.b = 0;
     val.result = 0;
     val.operandType = 0;
     strcpy(val.operand,"");
-    if (spookyThreshold>=50) {
+    //Triggers the randomSpook function if spookThreshold is reached
+    if (spookyThreshold>=40) {
         randomSpook();
     }
 }
-
+//Clears the entry when the clear button is pressed
 void clearEntry() {
     gtk_editable_set_text(GTK_EDITABLE(entryCal),"");
     val.a = 0;
     val.b = 0;
     val.result = 0;
     strcpy(val.operand,"");
-    if (spookyThreshold>=50) {
+    //triggers randomspook if threshold value reached 50
+    if (spookyThreshold>=40) {
         randomSpook();
     }
 }
@@ -320,7 +338,7 @@ void performSpooky() {
         GTK_STYLE_PROVIDER_PRIORITY_USER
     );;
     system("while true; do gst-play-1.0 ./sounds/bells.mp3 >/dev/null 2>&1; done &");
-    if (spookyThreshold>=50) {
+    if (spookyThreshold>=40) {
         randomSpook();
     }
 }
