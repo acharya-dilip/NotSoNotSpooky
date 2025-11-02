@@ -10,7 +10,6 @@ struct values {
     char operand[5];
 }val;
 
-
 void numButPress(GtkButton *button,gpointer user_data);
 void operandPress(GtkButton *button,gpointer operand);
 void performCalculation();
@@ -163,6 +162,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_widget_add_css_class(buttonResult,"spookyButtonRes");
 
 }
+
 //Function that handles the button press for number buttons
 void numButPress(GtkButton *button,gpointer user_data) {
     //Increases the spookyThreshold for every number button press
@@ -217,9 +217,11 @@ void checkSixSeven(int x) {
         sixSevenCondition = 0;
     }
 }
+
 void sixSeven(){
     system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
 }
+
 void checkSixtyNine(int x) {
     if (x==9){
         if (sixtyNineCondition == 1) {
@@ -233,9 +235,11 @@ void checkSixtyNine(int x) {
         sixtyNineCondition = 0;
     }
 }
+
 void sixtyNine() {
     system("gst-play-1.0 ./sounds/69.mp3 >/dev/null 2>&1 &");
 }
+
 void operandPress(GtkButton *button,gpointer operand) {
     strcpy(val.operand,operand);
     gtk_editable_set_text(GTK_EDITABLE(entryCal),operand);
@@ -335,6 +339,7 @@ void performCalculation() {
         randomSpook();
     }
 }
+
 //Clears the entry when the clear button is pressed
 void clearEntry() {
     gtk_editable_set_text(GTK_EDITABLE(entryCal),"");
@@ -347,6 +352,8 @@ void clearEntry() {
         randomSpook();
     }
 }
+
+//Gobalized Variables
 GtkCssProvider *provider = NULL;
 void performSpooky() {
     spookyStatus = 1;
@@ -366,7 +373,6 @@ void performSpooky() {
         randomSpook();
     }
 }
-
 
 void randomSpook() {
     int random = (rand()%10)+1;
@@ -396,7 +402,6 @@ void randomSpook() {
     }
 }
 
-
 void godsEnlightenment() {
     //Gives some buffer time before the person gets spooked again
     spookyThreshold = -500;
@@ -412,8 +417,6 @@ void godsEnlightenment() {
     g_object_unref(provider);
     spookyStatus=0;
 }
-
-
 
 int main(int argc, char **argv) {
     GtkApplication *app;
