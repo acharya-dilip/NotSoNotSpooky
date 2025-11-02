@@ -241,6 +241,7 @@ void pressAns() {
         val.b=val.answer;
         char temp[50];
         snprintf(temp,sizeof(temp),"%sAns",val.operand);
+        gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
 }
 void performCalculation() {
