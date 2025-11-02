@@ -33,3 +33,8 @@ Either way enlighten yourself and free yourself of the spook.
 |cd build|Navigates to the build dir|
 |./NotSoNotSpooky|Executes the binary executable for NotSoNotSpooky|
 
+# Created by Dilip Acharya
+- 430 Lines in C
+- 10 hours of time
+- A night's worth of Nightmares
+- :)
