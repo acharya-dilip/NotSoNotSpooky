@@ -357,6 +357,7 @@ void godsEnlightenment() {
         GTK_STYLE_PROVIDER(provider)
     );
     g_object_unref(provider);
+    spookyStatus=0;
 }
 
 
