@@ -20,6 +20,8 @@ void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
 void performSpooky(); int spookyThreshold,spookyStatus;
 void randomSpook();
+void checkSixtyNine();
+void sixtyNine();
 void godsEnlightenment();
 
 void clearEntry();
