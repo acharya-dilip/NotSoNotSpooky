@@ -232,7 +232,7 @@ void checkSixtyNine(int x) {
     }
 }
 void sixtyNine() {
-
+    system("gst-play-1.0 ./sounds/69.mp3 >/dev/null 2>&1 &");
 }
 void operandPress(GtkButton *button,gpointer operand) {
     strcpy(val.operand,operand);
