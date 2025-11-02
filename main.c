@@ -320,6 +320,8 @@ void performSpooky() {
         GTK_STYLE_PROVIDER(provider),
         GTK_STYLE_PROVIDER_PRIORITY_USER
     );;
+    system("while true; do gst-play-1.0 ./sounds/bells.mp3 >/dev/null 2>&1; done &");
+
 }
 
 void sixSeven(){
@@ -327,7 +329,14 @@ void sixSeven(){
 }
 
 void randomSpook() {
+    int random = (rand()%6)+1;
+    switch (random) {
+        case 1:
 
+            break;
+        default:
+            printf("No Spooks");
+    }
 }
 
 int main(int argc, char **argv) {
