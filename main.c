@@ -15,6 +15,7 @@ void operandPress(GtkButton *button,gpointer operand);
 void performCalculation();
 void square();
 //Jumpscares and quirks
+void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
 
 void clearEntry();
@@ -157,16 +158,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 void numButPress(GtkButton *button,gpointer user_data) {
     int n = GPOINTER_TO_INT(user_data);
-    if (n==7){
-        if (sixSevenCondition == 1) {
-        sixSeven();
-        }
-    }
-    if (n==6) {
-        sixSevenCondition = 1;
-    }else {
-        sixSevenCondition = 0;
-    }
+    checkSixSeven(n);
     if (strcmp(val.operand,"")==0){
         val.a = val.a*10+n;
         char temp[50];
@@ -179,10 +171,19 @@ void numButPress(GtkButton *button,gpointer user_data) {
         snprintf(temp,sizeof(temp),"%s%lld",val.operand,val.b);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
-
-
 }
-
+void checkSixSeven(int x) {
+    if (x==7){
+        if (sixSevenCondition == 1) {
+            sixSeven();
+        }
+    }
+    if (x==6) {
+        sixSevenCondition = 1;
+    }else {
+        sixSevenCondition = 0;
+    }
+}
 void operandPress(GtkButton *button,gpointer operand) {
     strcpy(val.operand,operand);
     gtk_editable_set_text(GTK_EDITABLE(entryCal),operand);
