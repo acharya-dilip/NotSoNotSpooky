@@ -300,13 +300,13 @@ void clearEntry() {
         randomSpook();
     }
 }
-
+GtkCssProvider *provider = NULL;
 void performSpooky() {
     spookyStatus = 1;
     system("gst-play-1.0 ./sounds/scream.mp3 >/dev/null 2>&1 &");
     sleep(2);
     //COnnects the spookyStyles.css stylesheet
-    GtkCssProvider *provider = gtk_css_provider_new();
+    provider = gtk_css_provider_new();
     gtk_css_provider_load_from_path(provider, "spookyStyles.css");
 
     gtk_style_context_add_provider_for_display(
@@ -351,14 +351,12 @@ void godsEnlightenment() {
     system("pkill -f 'while true; do gst-play-1.0 ./sounds/bells.mp3'");
     system(" pkill gst-play-1.0");
     //Now aaaaaaaaaaaaaaall we gotta figure out is how to stop the css
-    GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "saintStyles.css");
-
-    gtk_style_context_add_provider_for_display(
-        gdk_display_get_default(),
-        GTK_STYLE_PROVIDER(provider),
-        GTK_STYLE_PROVIDER_PRIORITY_USER
-    );;
+    GdkDisplay *display = gdk_display_get_default();
+    gtk_style_context_remove_provider_for_display(
+        display,
+        GTK_STYLE_PROVIDER(provider)
+    );
+    g_object_unref(provider);
 }
 
 
