@@ -131,6 +131,12 @@ button {
     background-position: center;
     background-repeat: no-repeat;
 }
+.spookyButtonClear{
+    color: transparent;
+    background-image: url("src/18.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 
 entry {

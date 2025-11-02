@@ -45,7 +45,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonClear = gtk_button_new_with_label("C");
     gtk_grid_attach(GTK_GRID(gridParent),buttonClear,0,1,3,1);
     g_signal_connect(buttonClear,"clicked",G_CALLBACK(clearEntry),NULL);
-    gtk_widget_add_css_class(buttonClear,"spookyButton");
+    gtk_widget_add_css_class(buttonClear,"spookyButtonClear");
 
     //init of numbut7
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
