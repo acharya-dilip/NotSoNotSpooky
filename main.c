@@ -348,7 +348,8 @@ void godsEnlightenment() {
     //Gives some buffer time before the person gets spooked again
     spookyThreshold = -500;
     //kills the gstreamer processes to stop the spooky sounds
-    system("pkill gst-launch-1.0; pkill gst-play-1.0");
+    system("pkill -f 'while true; do gst-play-1.0 ./sounds/bells.mp3'");
+    system(" pkill gst-play-1.0");
 
 }
 
