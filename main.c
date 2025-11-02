@@ -290,8 +290,8 @@ void performCalculation() {
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
         system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
     }
-
-    val.a = 0;
+    val.answer = val.result;
+    val.a = val.result;
     val.b = 0;
     val.result = 0;
     val.operandType = 0;
