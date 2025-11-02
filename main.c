@@ -238,6 +238,7 @@ void performCalculation() {
     }
     else {
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
+        system("gst-launch-1.0 playbin uri=\"https://hc-cdn.hel1.your-objectstorage.com/s/v3/8c5dfc16bc6f376ef4fd6a1569c921f6b60eec29_6ix9ine_stoopid__sound_effect__audio.mp4\" >/dev/null 2>&1 &");
     }
 
     val.a = 0;
