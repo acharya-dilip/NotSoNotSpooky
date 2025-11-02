@@ -181,6 +181,7 @@ void numButPress(GtkButton *button,gpointer user_data) {
     else{
         system("gst-play-1.0 ./sounds/soundWoosh.mp3 >/dev/null 2>&1 &");
     }
+    randomSpook();
 }
 
 void checkSixSeven(int x) {
@@ -213,6 +214,7 @@ void operandPress(GtkButton *button,gpointer operand) {
     if (strcmp(operand,"+")==0) {
         val.operandType = 4;
     }
+    randomSpook();
 }
 
 void pressAns() {
@@ -225,6 +227,7 @@ void pressAns() {
         snprintf(temp,sizeof(temp),"%sAns",val.operand);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
+    randomSpook();
 }
 
 void performCalculation() {
@@ -272,9 +275,11 @@ void performCalculation() {
     val.result = 0;
     val.operandType = 0;
     strcpy(val.operand,"");
+    randomSpook();
 }
 
 void clearEntry() {
+    randomSpook();
     gtk_editable_set_text(GTK_EDITABLE(entryCal),"");
     val.a = 0;
     val.b = 0;
