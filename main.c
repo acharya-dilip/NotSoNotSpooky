@@ -309,10 +309,16 @@ void sixSeven(){
 }
 
 void randomSpook() {
-    int random = (rand()%6)+1;
+    int random = (rand()%10)+1;
     switch (random) {
         case 1:
-        system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
+            system("gst-play-1.0 ./sounds/creepy.mp3 >/dev/null 2>&1 &");
+            break;
+        case 2:
+            system("gst-play-1.0 ./sounds/scream.mp3 >/dev/null 2>&1 &");
+            break;
+        case 3:
+            system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
             break;
         default:
             printf("No Spooks");
