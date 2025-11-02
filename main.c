@@ -343,6 +343,13 @@ void randomSpook() {
     }
 }
 
+
+void godsEnlightenment() {
+    spookyThreshold = -500;
+}
+
+
+
 int main(int argc, char **argv) {
     GtkApplication *app;
     int status;
