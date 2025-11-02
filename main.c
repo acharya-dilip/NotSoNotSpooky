@@ -133,7 +133,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
 
 
     //init of buttonPercent
-    GtkWidget *buttonAns= gtk_button_new_with_label("Ans");
+    GtkWidget *buttonAns= gtk_button_new_with_label("A");
     gtk_grid_attach(GTK_GRID(gridParent),buttonAns,2,5,1,1);
     gtk_widget_add_css_class(buttonAns,"spookyButtonAns");
 
