@@ -7,7 +7,9 @@ button {
 
 }
 
-
+.spookyButton1{
+ background-image: url("src/1.png");
+}
 
 entry {
     font-size: 20px;

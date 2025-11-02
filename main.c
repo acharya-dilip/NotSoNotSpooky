@@ -52,10 +52,6 @@ static void activate (GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
     g_signal_connect(numbut7,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(7));
     gtk_widget_add_css_class(numbut7,"spookyButton7");
-    GtkWidget *pic7 = gtk_picture_new_for_filename("src/7.png");
-    gtk_picture_set_can_shrink(GTK_PICTURE(pic7), TRUE);
-    gtk_picture_set_content_fit(GTK_PICTURE(pic7), GTK_CONTENT_FIT_CONTAIN);
-    gtk_button_set_child(GTK_BUTTON(numbut7),pic7);
 
     //init of numbut8
     GtkWidget *numbut8 = gtk_button_new_with_label("8");
