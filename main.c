@@ -314,6 +314,8 @@ void performCalculation() {
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
         //PLays the womanScreaming sound effect
         system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
+        //Increases the spookThreshold
+        spookyThreshold+=20;
     }
     //This if statement check if the god value has be conjoured
     if (val.a==6940 && val.operandType==4 && val.b==67 || val.result == 69487 || val.result==69420) {
