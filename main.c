@@ -204,9 +204,9 @@ void numButPress(GtkButton *button,gpointer user_data) {
     if (spookyStatus==0) {
         if (spookyThreshold>=100) {
             performSpooky();
-            spookyStatus = 1;
         }
-    }else{
+    }
+    else{
         system("gst-play-1.0 ./sounds/soundWoosh.mp3 >/dev/null 2>&1 &");
     }
 }
@@ -307,6 +307,7 @@ void clearEntry() {
 }
 
 void performSpooky() {
+    spookyStatus = 1;
     system("gst-play-1.0 ./sounds/scream.mp3 >/dev/null 2>&1 &");
     sleep(2);
     //COnnects the styles.css stylesheet
