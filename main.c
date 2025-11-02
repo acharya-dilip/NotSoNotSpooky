@@ -320,6 +320,8 @@ void randomSpook() {
         case 3:
             system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
             break;
+        case 4:
+            system("gst-play-1.0 ./sounds/witchLaugh.mp3 >/dev/null 2>&1 &");
         default:
             printf("No Spooks");
     }
