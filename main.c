@@ -17,7 +17,7 @@ void pressAns();
 //Jumpscares and quirks
 void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
-void performSpooky(); int spookyThreshold;
+void performSpooky(); int spookyThreshold,spookyStatus;
 
 void clearEntry();
 //Globalised Variables
@@ -200,8 +200,11 @@ void numButPress(GtkButton *button,gpointer user_data) {
         snprintf(temp,sizeof(temp),"%s%lld",val.operand,val.b);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
-    if (spookyThreshold>=100) {
-        performSpooky();
+    if (spookyStatus!=0) {
+        if (spookyThreshold>=100) {
+            performSpooky();
+            spookyStatus = 1;
+        }
     }
 }
 void checkSixSeven(int x) {
