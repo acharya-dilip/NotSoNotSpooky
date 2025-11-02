@@ -207,7 +207,7 @@ void numButPress(GtkButton *button,gpointer user_data) {
             spookyStatus = 1;
         }
     }else {
-
+        system("gst-play-1.0 ./sounds/soundWoosh.mp3 >/dev/null 2>&1 &");
     }
 }
 void checkSixSeven(int x) {
