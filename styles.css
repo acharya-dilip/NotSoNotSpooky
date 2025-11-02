@@ -82,6 +82,34 @@ button {
     background-repeat:no-repeat;
 
 }
+.spookyButtonDiv{
+    color: transparent;
+    background-image: url("src/11.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+.spookyButtonProd{
+    color: transparent;
+    background-image: url("src/12.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+.spookyButtonSub{
+    color: transparent;
+    background-image: url("src/13.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+.spookyButtonSum{
+    color: transparent;
+    background-image: url("src/14.png");
+    background-position:center;
+    background-repeat:no-repeat;
+
+
 
 entry {
     font-size: 20px;
