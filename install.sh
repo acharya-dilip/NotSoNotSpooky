@@ -12,4 +12,4 @@ cd build
 cmake ..
 cmake --build .
 #Moving the required files in the build directory
-mv styles.css src sounds ~/build
+#mv styles.css src sounds ~/build
