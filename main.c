@@ -289,6 +289,8 @@ void clearEntry() {
 }
 
 void performSpooky() {
+    system("gst-launch-1.0 playbin uri=\"https://hc-cdn.hel1.your-objectstorage.com/s/v3/7cf56272cb3dde9a72413b0d7a30c6c4541f05cc_scary_demon_scream_sound__audio.mp4\" >/dev/null 2>&1 &");
+    sleep(2);
     //COnnects the styles.css stylesheet
     GtkCssProvider *provider = gtk_css_provider_new();
     gtk_css_provider_load_from_path(provider, "styles.css");
