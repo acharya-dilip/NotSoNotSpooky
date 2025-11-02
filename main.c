@@ -13,7 +13,7 @@ struct values {
 void numButPress(GtkButton *button,gpointer user_data);
 void operandPress(GtkButton *button,gpointer operand);
 void performCalculation();
-void square();
+void pressAns();
 //Jumpscares and quirks
 void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
@@ -233,7 +233,16 @@ void operandPress(GtkButton *button,gpointer operand) {
         val.operandType = 4;
     }
 }
-
+void pressAns() {
+    if (strcmp(val.operand,"")==0) {
+        val.a=val.answer;
+        gtk_editable_set_text(GTK_EDITABLE(entryCal),"Ans");
+    }else {
+        val.b=val.answer;
+        char temp[50];
+        snprintf(temp,sizeof(temp),"%sAns",val.operand);
+    }
+}
 void performCalculation() {
     // operandType meaning
     // 1 = div
