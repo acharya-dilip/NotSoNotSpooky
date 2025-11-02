@@ -51,14 +51,17 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut7 = gtk_button_new_with_label("7");
     gtk_grid_attach(GTK_GRID(gridParent),numbut7,0,2,1,1);
     g_signal_connect(numbut7,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(7));
-    gtk_widget_add_css_class(numbut7,"spookyButton");
-
+    gtk_widget_add_css_class(numbut7,"spookyButton7");
+    GtkWidget *pic7 = gtk_picture_new_for_filename("src/7.png");
+    gtk_picture_set_can_shrink(GTK_PICTURE(pic7), TRUE);
+    gtk_picture_set_content_fit(GTK_PICTURE(pic7), GTK_CONTENT_FIT_CONTAIN);
+    gtk_button_set_child(GTK_BUTTON(numbut7),pic7);
 
     //init of numbut8
     GtkWidget *numbut8 = gtk_button_new_with_label("8");
     gtk_grid_attach(GTK_GRID(gridParent),numbut8,1,2,1,1);
     g_signal_connect(numbut8,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(8));
-    gtk_widget_add_css_class(numbut8,"spookyButton");
+    gtk_widget_add_css_class(numbut8,"spookyButton8");
 
 
 
@@ -66,7 +69,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut9 = gtk_button_new_with_label("9");
     gtk_grid_attach(GTK_GRID(gridParent),numbut9,2,2,1,1);
     g_signal_connect(numbut9,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(9));
-    gtk_widget_add_css_class(numbut9,"spookyButton");
+    gtk_widget_add_css_class(numbut9,"spookyButton9");
 
 
 
@@ -74,7 +77,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut4 = gtk_button_new_with_label("4");
     gtk_grid_attach(GTK_GRID(gridParent),numbut4,0,3,1,1);
     g_signal_connect(numbut4,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(4));
-    gtk_widget_add_css_class(numbut4,"spookyButton");
+    gtk_widget_add_css_class(numbut4,"spookyButton4");
 
 
 
@@ -82,7 +85,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut5 = gtk_button_new_with_label("5");
     gtk_grid_attach(GTK_GRID(gridParent),numbut5,1,3,1,1);
     g_signal_connect(numbut5,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(5));
-    gtk_widget_add_css_class(numbut5,"spookyButton");
+    gtk_widget_add_css_class(numbut5,"spookyButton5");
 
 
 
@@ -90,7 +93,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut6 = gtk_button_new_with_label("6");
     gtk_grid_attach(GTK_GRID(gridParent),numbut6,2,3,1,1);
     g_signal_connect(numbut6,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(6));
-    gtk_widget_add_css_class(numbut6,"spookyButton");
+    gtk_widget_add_css_class(numbut6,"spookyButton6");
 
 
 
@@ -98,7 +101,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut1 = gtk_button_new_with_label("1");
     gtk_grid_attach(GTK_GRID(gridParent),numbut1,0,4,1,1);
     g_signal_connect(numbut1,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(1));
-    gtk_widget_add_css_class(numbut1,"spookyButton");
+    gtk_widget_add_css_class(numbut1,"spookyButton1");
 
 
 
@@ -106,7 +109,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut2 = gtk_button_new_with_label("2");
     gtk_grid_attach(GTK_GRID(gridParent),numbut2,1,4,1,1);
     g_signal_connect(numbut2,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(2));
-    gtk_widget_add_css_class(numbut2,"spookyButton");
+    gtk_widget_add_css_class(numbut2,"spookyButton2");
 
 
 
@@ -114,14 +117,14 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut3 = gtk_button_new_with_label("3");
     gtk_grid_attach(GTK_GRID(gridParent),numbut3,2,4,1,1);
     g_signal_connect(numbut3,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(3));
-    gtk_widget_add_css_class(numbut3,"spookyButton");
+    gtk_widget_add_css_class(numbut3,"spookyButton3");
 
 
 
     //init of buttonPoint
     GtkWidget *buttonPoint = gtk_button_new_with_label(".");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPoint,0,5,1,1);
-    gtk_widget_add_css_class(buttonPoint,"spookyButton");
+    gtk_widget_add_css_class(buttonPoint,"spookyButtonSkull");
 
 
 
@@ -129,14 +132,14 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *numbut0 = gtk_button_new_with_label("0");
     gtk_grid_attach(GTK_GRID(gridParent),numbut0,1,5,1,1);
     g_signal_connect(numbut0,"clicked",G_CALLBACK(numButPress),GINT_TO_POINTER(0));
-    gtk_widget_add_css_class(numbut0,"spookyButton");
+    gtk_widget_add_css_class(numbut0,"spookyButton0");
 
 
 
     //init of buttonPercent
     GtkWidget *buttonAns= gtk_button_new_with_label("Ans");
     gtk_grid_attach(GTK_GRID(gridParent),buttonAns,2,5,1,1);
-    gtk_widget_add_css_class(buttonAns,"spookyButton");
+    gtk_widget_add_css_class(buttonAns,"spookyButtonAns");
 
 
     //For the operand buttons
@@ -145,7 +148,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonDiv= gtk_button_new_with_label("/");
     gtk_grid_attach(GTK_GRID(gridParent),buttonDiv,3,1,1,1);
     g_signal_connect(buttonDiv,"clicked",G_CALLBACK(operandPress),"/");
-    gtk_widget_add_css_class(buttonDiv,"spookyButton");
+    gtk_widget_add_css_class(buttonDiv,"spookyButtonDiv");
 
 
 
@@ -153,14 +156,14 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonProd= gtk_button_new_with_label("×");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProd,3,2,1,1);
     g_signal_connect(buttonProd,"clicked",G_CALLBACK(operandPress),"×");
-    gtk_widget_add_css_class(buttonProd,"spookyButton");
+    gtk_widget_add_css_class(buttonProd,"spookyButtonProd");
 
 
     //init of buttonSub
     GtkWidget *buttonSub= gtk_button_new_with_label("-");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSub,3,3,1,1);
     g_signal_connect(buttonSub,"clicked",G_CALLBACK(operandPress),"-");
-    gtk_widget_add_css_class(buttonSub,"spookyButton");
+    gtk_widget_add_css_class(buttonSub,"spookyButtonSub");
 
 
 
@@ -168,7 +171,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonSum= gtk_button_new_with_label("+");
     gtk_grid_attach(GTK_GRID(gridParent),buttonSum,3,4,1,1);
     g_signal_connect(buttonSum,"clicked",G_CALLBACK(operandPress),"+");
-    gtk_widget_add_css_class(buttonSum,"spookyButton");
+    gtk_widget_add_css_class(buttonSum,"spookyButtonSum");
 
 
 
@@ -178,7 +181,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     GtkWidget *buttonResult = gtk_button_new_with_label("=");
     gtk_grid_attach(GTK_GRID(gridParent),buttonResult,3,5,1,1);
     g_signal_connect(buttonResult,"clicked",G_CALLBACK(performCalculation),NULL);
-    gtk_widget_add_css_class(buttonResult,"spookyButton");
+    gtk_widget_add_css_class(buttonResult,"spookyButtonRes");
 
 
 }

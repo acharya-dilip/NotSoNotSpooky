@@ -2,18 +2,12 @@ window{
 }
 button {
     font-size: 17px;
-    min-width: 30px;
-    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
 
 }
 
-.spookyButton{
-    background-color: purple;
-    background-image: none;
-    color: black;
-    border-radius: 6px;
-    border: none;
-}
+
 
 entry {
     font-size: 20px;
