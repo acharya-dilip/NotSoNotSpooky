@@ -305,9 +305,9 @@ void performSpooky() {
     spookyStatus = 1;
     system("gst-play-1.0 ./sounds/scream.mp3 >/dev/null 2>&1 &");
     sleep(2);
-    //COnnects the styles.css stylesheet
+    //COnnects the spookyStyles.css stylesheet
     GtkCssProvider *provider = gtk_css_provider_new();
-    gtk_css_provider_load_from_path(provider, "styles.css");
+    gtk_css_provider_load_from_path(provider, "spookyStyles.css");
 
     gtk_style_context_add_provider_for_display(
         gdk_display_get_default(),
@@ -350,6 +350,7 @@ void godsEnlightenment() {
     //kills the gstreamer processes to stop the spooky sounds
     system("pkill -f 'while true; do gst-play-1.0 ./sounds/bells.mp3'");
     system(" pkill gst-play-1.0");
+    //Now aaaaaaaaaaaaaaall we gotta figure out is how to stop the css
 
 }
 
