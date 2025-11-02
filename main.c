@@ -181,6 +181,9 @@ void numButPress(GtkButton *button,gpointer user_data) {
     else{
         system("gst-play-1.0 ./sounds/soundWoosh.mp3 >/dev/null 2>&1 &");
     }
+    if (spookyThreshold>=50) {
+        randomSpook();
+    }
 }
 
 void checkSixSeven(int x) {
@@ -213,6 +216,9 @@ void operandPress(GtkButton *button,gpointer operand) {
     if (strcmp(operand,"+")==0) {
         val.operandType = 4;
     }
+    if (spookyThreshold>=50) {
+        randomSpook();
+    }
 }
 
 void pressAns() {
@@ -224,6 +230,9 @@ void pressAns() {
         char temp[50];
         snprintf(temp,sizeof(temp),"%sAns",val.operand);
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
+    }
+    if (spookyThreshold>=50) {
+        randomSpook();
     }
 }
 
@@ -272,6 +281,9 @@ void performCalculation() {
     val.result = 0;
     val.operandType = 0;
     strcpy(val.operand,"");
+    if (spookyThreshold>=50) {
+        randomSpook();
+    }
 }
 
 void clearEntry() {
@@ -280,6 +292,9 @@ void clearEntry() {
     val.b = 0;
     val.result = 0;
     strcpy(val.operand,"");
+    if (spookyThreshold>=50) {
+        randomSpook();
+    }
 }
 
 void performSpooky() {
@@ -296,7 +311,9 @@ void performSpooky() {
         GTK_STYLE_PROVIDER_PRIORITY_USER
     );;
     system("while true; do gst-play-1.0 ./sounds/bells.mp3 >/dev/null 2>&1; done &");
-
+    if (spookyThreshold>=50) {
+        randomSpook();
+    }
 }
 
 void sixSeven(){
