@@ -20,6 +20,7 @@ void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
 void performSpooky(); int spookyThreshold,spookyStatus;
 void randomSpook();
+void godsEnlightenment();
 
 void clearEntry();
 //Globalised Variables
@@ -274,6 +275,9 @@ void performCalculation() {
     else {
         gtk_editable_set_text(GTK_EDITABLE(entryCal),"Error!");
         system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
+    }
+    if (val.a==6940 && val.operandType==4 && val.b==67 || val.result == 69487 || val.result==69420) {
+        godsEnlightenment();
     }
     val.answer = val.result;
     val.a = val.result;
