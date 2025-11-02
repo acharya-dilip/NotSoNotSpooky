@@ -370,20 +370,29 @@ void performSpooky() {
 
 void randomSpook() {
     int random = (rand()%10)+1;
+    int spookRes;
     switch (random) {
         case 1:
             system("gst-play-1.0 ./sounds/creepy.mp3 >/dev/null 2>&1 &");
+            spookRes=0;
             break;
         case 2:
             system("gst-play-1.0 ./sounds/scream.mp3 >/dev/null 2>&1 &");
+            spookRes=0;
             break;
         case 3:
             system("gst-play-1.0 ./sounds/womanScream.mp3 >/dev/null 2>&1 &");
+            spookRes=0;
             break;
         case 4:
             system("gst-play-1.0 ./sounds/witchLaugh.mp3 >/dev/null 2>&1 &");
+            spookRes=0;
         default:
             printf("No Spooks");
+            spookRes=1;
+    }
+    if (spookRes==0) {
+        spookyThreshold +=20;
     }
 }
 
