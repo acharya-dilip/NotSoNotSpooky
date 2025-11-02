@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <gtk/gtk.h>
 #include <curl/curl.h>
+#include <gst/gst.h>
 
 struct values {
     long long a,b;
@@ -205,6 +206,8 @@ void numButPress(GtkButton *button,gpointer user_data) {
             performSpooky();
             spookyStatus = 1;
         }
+    }else {
+
     }
 }
 void checkSixSeven(int x) {

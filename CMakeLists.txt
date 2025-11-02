@@ -8,12 +8,15 @@ set(CMAKE_C_STANDARD_REQUIRD ON)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK4 REQUIRED gtk4)
 pkg_check_modules(CURL REQUIRED libcurl)
+pkg_check_modules(GST REQUIRED gstreamer-1.0)
 
 include_directories(${GTK4_INCLUDE_DIRS})
 include_directories(${CURL_INCLUDE_DIRS})
+include_directories(${GST_INCLUDE_DIRS})
 
 link_directories(${GTK4_LIBRARY_DIRS})
 link_directories(${CURL_LIBRARY_DIRS})
+link_directories(${GST_INCLUDE_DIRS})
 
 
 add_executable(NotSoNotSpooky main.c
@@ -22,6 +25,7 @@ add_executable(NotSoNotSpooky main.c
 target_link_libraries(${PROJECT_NAME}
         ${GTK4_LIBRARIES}
         ${CURL_LIBRARIES}
+        ${GST_LIBRARIES}
 )
 target_compile_options(${PROJECT_NAME}
         PRIVATE ${GTK4_CFLAGS_OTHER})
