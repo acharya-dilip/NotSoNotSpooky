@@ -307,7 +307,7 @@ void randomSpook() {
     int random = (rand()%6)+1;
     switch (random) {
         case 1:
-
+        system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
             break;
         default:
             printf("No Spooks");
