@@ -19,6 +19,7 @@ void pressAns();
 void checkSixSeven(int x);
 void sixSeven(); int sixSevenCondition;
 void performSpooky(); int spookyThreshold,spookyStatus;
+void randomSpook();
 
 void clearEntry();
 //Globalised Variables
@@ -323,6 +324,10 @@ void performSpooky() {
 
 void sixSeven(){
     system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
+}
+
+void randomSpook() {
+
 }
 
 int main(int argc, char **argv) {
