@@ -24,7 +24,7 @@ void clearEntry();
 GtkWidget *entryCal;
 static void activate (GtkApplication *app,gpointer user_data) {
 
-    performSpooky();
+    //performSpooky();
 
     //Init of windowSpooky
     GtkWidget *windowSpooky = gtk_application_window_new(app);
@@ -120,6 +120,7 @@ static void activate (GtkApplication *app,gpointer user_data) {
     //init of buttonPoint
     GtkWidget *buttonPoint = gtk_button_new_with_label(".");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPoint,0,5,1,1);
+    g_signal_connect(buttonPoint,"clicked",G_CALLBACK(performSpooky),NULL);
     gtk_widget_add_css_class(buttonPoint,"spookyButtonSkull");
 
 
