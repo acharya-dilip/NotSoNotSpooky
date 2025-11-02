@@ -171,6 +171,8 @@ void numButPress(GtkButton *button,gpointer user_data) {
     int n = GPOINTER_TO_INT(user_data);
     //checks if 6 and 7 are consectively placed and triggers sixSeven spook if they are
     checkSixSeven(n);
+    //checks if 6 and 9 are consecutively placed and triggers sixtyNine spook if they are
+    checkSixtyNine(n);
     //Decides weather to set the value as a or based on if operand is present
     if (strcmp(val.operand,"")==0){
         //sets the value of digits typed as value of a if operand is absent
