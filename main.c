@@ -307,7 +307,7 @@ void clearEntry() {
 }
 
 void performSpooky() {
-    system("gst-launch-1.0 playbin uri=\"https://hc-cdn.hel1.your-objectstorage.com/s/v3/7cf56272cb3dde9a72413b0d7a30c6c4541f05cc_scary_demon_scream_sound__audio.mp4\" >/dev/null 2>&1 &");
+    system("gst-play-1.0 ./sounds/scream.mp3 >/dev/null 2>&1 &");
     sleep(2);
     //COnnects the styles.css stylesheet
     GtkCssProvider *provider = gtk_css_provider_new();
@@ -321,8 +321,7 @@ void performSpooky() {
 }
 
 void sixSeven(){
-    printf("SiXsEvEn");
-    system("gst-launch-1.0 playbin uri=\"https://hc-cdn.hel1.your-objectstorage.com/s/v3/b0115ef0df6139a69e9e67c4dc8a0fcc50e57e07_67._sound_effect._audio.mp4\" >/dev/null 2>&1 &");
+    system("gst-play-1.0 ./sounds/67.mp3 >/dev/null 2>&1 &");
 }
 
 int main(int argc, char **argv) {
