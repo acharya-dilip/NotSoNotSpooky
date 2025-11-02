@@ -134,6 +134,7 @@ button {
 
 
 entry {
+    background-image: url("src/entrybg.png");
     font-size: 20px;
     min-width:160px;
     min-height: 50px;
