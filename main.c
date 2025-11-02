@@ -4,7 +4,7 @@
 
 struct values {
     long long a,b;
-    double result;
+    double result,answer;
     int operandType;
     char operand[5];
 }val;
@@ -266,6 +266,7 @@ void performCalculation() {
     if (result==0) {
         char temp[50];
         snprintf(temp,sizeof(temp),"%3.lf",val.result);
+        val.answer = val.result;
         gtk_editable_set_text(GTK_EDITABLE(entryCal),temp);
     }
     else {
