@@ -5,6 +5,8 @@ the forbidden decimal button heard it makes things screammmm.
 <br>
 If you do get spooked don't fret it. Just find the God Digit and equate it into exsistance 
 using the accursed calculator. <strong>BEWARE OF THE SPOOKS!!</strong>
+
+
 <img width="223" height="243" alt="image" src="https://github.com/user-attachments/assets/05a05bc1-4162-4946-869b-a40f990bc03e" /> <img width="223" height="261" alt="image" src="https://github.com/user-attachments/assets/d8e1a652-8340-45e2-a374-33d0729fffe2" />
 
 
